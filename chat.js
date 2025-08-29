@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
@@ -11,11 +11,11 @@ async function run() {
     history: [
       {
         role: "user",
-        parts: [{ text: "Olá, adoro viajar" }],
+        parts: [{ text: "Oi, adoro viajar!" }],
       },
       {
         role: "model",
-        parts: [{ text: "Great to meet you. What would you like to know?" }],
+        parts: [{ text: "Ah que legal, para onde deseja viajar?" }],
       },
     ],
     generationConfig: {
@@ -23,7 +23,7 @@ async function run() {
     },
   });
 
-  const msg = "Quero ir para o Canadá!";
+  const msg = "Quero ir para o Canadá";
 
   const result = await chat.sendMessage(msg);
   const response = await result.response;
